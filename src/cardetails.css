@@ -1,0 +1,585 @@
+.car-details-page {
+  min-height: 100vh;
+
+  background: #050505;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.details-nav {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  z-index: 20;
+
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 5.3vw;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+.details-logo {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.details-logo span {
+  font-weight: 300;
+}
+
+.details-back {
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  text-decoration: none;
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.18em;
+
+  transition:
+    color 0.3s ease;
+}
+
+.details-back:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.details-hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  overflow: hidden;
+}
+
+.details-image {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+}
+
+.details-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  filter:
+    brightness(0.52)
+    contrast(1.15)
+    saturate(0.85);
+
+  transform: scale(1.03);
+}
+
+.details-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.08) 40%,
+      rgba(0, 0, 0, 0.82) 100%
+    );
+}
+
+.details-hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  padding:
+    0 7vw 90px;
+}
+
+.details-kicker {
+  margin-bottom: 25px;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+.details-hero h1 {
+  margin: 0;
+
+  max-width: 1000px;
+
+  font-size:
+    clamp(
+      4rem,
+      10vw,
+      11rem
+    );
+
+  line-height: 0.8;
+
+  font-weight: 400;
+
+  letter-spacing: -0.08em;
+
+  text-transform: uppercase;
+}
+
+.details-price {
+  margin-top: 35px;
+
+  font-size: 1rem;
+
+  letter-spacing: 0.08em;
+}
+
+.details-status {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding:
+    9px 13px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.3);
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+.details-info {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 10vw;
+
+  padding:
+    150px 7vw;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+.details-section-label {
+  margin-bottom: 35px;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+
+  font-size: 0.57rem;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+.details-description h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      3.5rem,
+      6vw,
+      7rem
+    );
+
+  line-height: 0.82;
+
+  font-weight: 400;
+
+  letter-spacing: -0.08em;
+}
+
+.details-description h2 span,
+.details-book h2 span {
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px
+    rgba(255, 255, 255, 0.7);
+}
+
+.description-text {
+  max-width: 500px;
+
+  margin-top: 50px;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 0.82rem;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS
+   ========================================================= */
+
+.details-spec-panel {
+  align-self: center;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.18);
+}
+
+.spec-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding:
+    22px 0;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+.spec-row span {
+  color:
+    rgba(255, 255, 255, 0.35);
+
+  font-size: 0.55rem;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.spec-row strong {
+  color:
+    rgba(255, 255, 255, 0.85);
+
+  font-size: 0.75rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   BOOKING CTA
+   ========================================================= */
+
+.details-book {
+  position: relative;
+
+  min-height: 75vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding:
+    120px 7vw;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    );
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+.details-book-content {
+  max-width: 800px;
+}
+
+.details-book h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      4rem,
+      9vw,
+      10rem
+    );
+
+  line-height: 0.8;
+
+  font-weight: 400;
+
+  letter-spacing: -0.08em;
+}
+
+.details-book-content > p:not(.details-section-label) {
+  margin-top: 35px;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 0.78rem;
+}
+
+.details-book-button {
+  display: inline-block;
+
+  margin-top: 45px;
+
+  padding:
+    20px 30px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.5);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.17em;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.details-book-button:hover {
+  background: #ffffff;
+
+  color: #000000;
+}
+
+.details-book-number {
+  color:
+    rgba(255, 255, 255, 0.18);
+
+  font-size: 0.55rem;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.18em;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.details-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding:
+    25px 7vw;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  color:
+    rgba(255, 255, 255, 0.3);
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.17em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NOT FOUND
+   ========================================================= */
+
+.car-not-found {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background: #050505;
+
+  color: #ffffff;
+}
+
+.car-not-found p {
+  margin-bottom: 30px;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.2em;
+}
+
+.car-not-found h1 {
+  font-size:
+    clamp(
+      4rem,
+      10vw,
+      9rem
+    );
+
+  line-height: 0.8;
+
+  font-weight: 400;
+
+  letter-spacing: -0.08em;
+}
+
+.car-not-found h1 span {
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px
+    rgba(255, 255, 255, 0.7);
+}
+
+.car-not-found a {
+  margin-top: 50px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.17em;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .details-nav {
+    height: 75px;
+
+    padding:
+      0 6vw;
+  }
+
+  .details-hero {
+    min-height: 85vh;
+  }
+
+  .details-hero-content {
+    padding:
+      0 6vw 65px;
+  }
+
+  .details-hero h1 {
+    font-size:
+      clamp(
+        4rem,
+        17vw,
+        7rem
+      );
+  }
+
+  .details-info {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+
+    padding:
+      90px 6vw;
+  }
+
+  .details-book {
+    min-height: 65vh;
+
+    padding:
+      90px 6vw;
+  }
+
+  .details-book-number {
+    display: none;
+  }
+
+  .details-footer {
+    padding:
+      25px 6vw;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .details-footer span:last-child {
+    display: none;
+  }
+}

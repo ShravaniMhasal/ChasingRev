@@ -1,0 +1,1725 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #090909;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.home-page {
+  width: 100%;
+  background: #090909;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+  overflow: hidden;
+  background: #050505;
+}
+
+
+/* PORSCHE IMAGE */
+
+.hero-background {
+  position: absolute;
+  z-index: 0;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /* Porsche pushed toward the RIGHT */
+  object-position: 72% center;
+
+  display: block;
+
+  will-change: transform, opacity;
+}
+
+
+/* DARK LEFT SIDE / CINEMATIC OVERLAY */
+
+.hero-overlay {
+  position: absolute;
+  z-index: 1;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.96) 0%,
+      rgba(0, 0, 0, 0.80) 28%,
+      rgba(0, 0, 0, 0.43) 55%,
+      rgba(0, 0, 0, 0.18) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.05) 50%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: absolute;
+  z-index: 20;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 105px;
+
+  padding: 0 5.5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  will-change: transform, opacity;
+}
+
+.logo {
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  letter-spacing: 5px;
+}
+
+.logo span {
+  font-weight: 300;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 12px;
+  letter-spacing: 3px;
+
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.55;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-login {
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.nav-book {
+  color: #ffffff;
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  padding: 16px 25px;
+
+  font-size: 11px;
+  letter-spacing: 2px;
+
+  transition: all 0.3s ease;
+}
+
+.nav-book:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  position: absolute;
+  z-index: 10;
+
+  top: 50%;
+  left: 9%;
+
+  width: 48%;
+  max-width: 720px;
+
+  transform: translateY(-45%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  pointer-events: none;
+}
+
+.hero-content > * {
+  pointer-events: auto;
+}
+
+.hero-eyebrow {
+  margin: 0 0 28px;
+
+  color: #b8b8b5;
+
+  font-size: 11px;
+  letter-spacing: 5px;
+
+  will-change: transform, opacity;
+}
+
+.hero-content h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(95px, 11vw, 175px);
+
+  line-height: 0.78;
+
+  letter-spacing: -8px;
+
+  font-weight: 500;
+
+  will-change: transform, opacity;
+}
+
+.hero-content h1 span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+}
+
+.hero-description {
+  margin: 48px 0 30px;
+
+  max-width: 600px;
+
+  color: #ccccca;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+
+  will-change: transform, opacity;
+}
+
+.hero-button {
+  display: inline-block;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  padding: 19px 27px;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+
+  will-change: transform, opacity;
+}
+
+.hero-button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+
+/* =========================================================
+   HERO BOTTOM
+========================================================= */
+
+.hero-bottom {
+  position: absolute;
+  z-index: 20;
+
+  left: 5.5%;
+  right: 5.5%;
+  bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #a8a8a5;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  will-change: transform, opacity;
+}
+
+.hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-scroll i {
+  display: block;
+
+  width: 80px;
+  height: 1px;
+
+  background: #777777;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.section-kicker {
+  margin: 0 0 35px;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   STATEMENT
+========================================================= */
+
+.statement-section {
+  background: #f0efeb;
+  color: #111111;
+
+  padding: 170px 7% 150px;
+}
+
+.statement-inner {
+  max-width: 1250px;
+}
+
+.statement-section h2 {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: clamp(70px, 9vw, 145px);
+
+  line-height: 0.84;
+
+  letter-spacing: -6px;
+
+  font-weight: 400;
+}
+
+.statement-section h2 span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px #111111;
+}
+
+.statement-text {
+  max-width: 580px;
+
+  margin-top: 65px;
+
+  color: #666666;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+.categories-section {
+  background: #090909;
+  color: #ffffff;
+
+  padding: 150px 7%;
+}
+
+.categories-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(65px, 8vw, 130px);
+
+  line-height: 0.85;
+
+  letter-spacing: -5px;
+
+  font-weight: 400;
+}
+
+.categories-header h2 span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+.category-list {
+  margin-top: 120px;
+}
+
+.category-row {
+  width: 100%;
+
+  min-height: 185px;
+
+  display: grid;
+
+  grid-template-columns: 100px 1fr 70px;
+
+  align-items: center;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-top: 1px solid #333333;
+
+  transition: padding 0.4s ease;
+}
+
+.category-row:last-child {
+  border-bottom: 1px solid #333333;
+}
+
+.category-row:hover {
+  padding-left: 25px;
+}
+
+.category-number {
+  color: #666666;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+}
+
+.category-content h3 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-size: clamp(35px, 4vw, 65px);
+
+  font-weight: 400;
+
+  letter-spacing: -2px;
+}
+
+.category-content p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+}
+
+.category-arrow {
+  color: #ffffff;
+
+  font-size: 25px;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   FEATURED
+========================================================= */
+
+.featured-section {
+  background: #f0efeb;
+  color: #111111;
+
+  padding: 150px 7%;
+}
+
+.featured-header {
+  margin-bottom: 100px;
+}
+
+.featured-header h2 {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: clamp(65px, 8vw, 130px);
+
+  line-height: 0.85;
+
+  letter-spacing: -5px;
+
+  font-weight: 400;
+}
+
+.featured-header h2 span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px #111111;
+}
+
+.featured-car {
+  display: grid;
+
+  grid-template-columns: 1.3fr 0.7fr;
+
+  min-height: 650px;
+}
+
+.featured-image {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #111111;
+
+  min-height: 600px;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+
+  min-height: 600px;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.featured-car:hover .featured-image img {
+  transform: scale(1.04);
+}
+
+.featured-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+.featured-label {
+  position: absolute;
+
+  top: 30px;
+  left: 30px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+}
+
+.featured-info {
+  background: #deddd8;
+
+  padding: 65px 50px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.featured-brand {
+  margin-bottom: 20px;
+
+  color: #111111;
+
+  font-size: 11px;
+
+  letter-spacing: 5px;
+}
+
+.featured-info h3 {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: clamp(55px, 5vw, 85px);
+
+  line-height: 0.85;
+
+  letter-spacing: -4px;
+
+  font-weight: 400;
+}
+
+.featured-description {
+  max-width: 420px;
+
+  margin-top: 38px;
+
+  color: #666666;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.featured-bottom {
+  border-top: 1px solid #aaa;
+
+  padding-top: 32px;
+}
+
+.featured-specs {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+.featured-specs span {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  color: #111111;
+
+  font-size: 13px;
+}
+
+.featured-specs small,
+.featured-price small {
+  color: #777777;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+.featured-price {
+  margin-top: 40px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.featured-price strong {
+  color: #111111;
+
+  font-size: 32px;
+
+  font-weight: 400;
+}
+
+.featured-button {
+  display: inline-block;
+
+  margin-top: 28px;
+
+  color: #111111;
+
+  text-decoration: none;
+
+  border: 1px solid #777777;
+
+  padding: 17px 23px;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  transition: all 0.3s ease;
+}
+
+.featured-button:hover {
+  background: #111111;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   DIFFERENCE
+========================================================= */
+
+.difference-section {
+  background: #090909;
+  color: #ffffff;
+
+  padding: 160px 7%;
+}
+
+.difference-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(65px, 8vw, 130px);
+
+  line-height: 0.85;
+
+  letter-spacing: -5px;
+
+  font-weight: 400;
+}
+
+.difference-header h2 span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+.difference-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 120px;
+
+  gap: 1px;
+
+  background: #333333;
+}
+
+.difference-item {
+  min-height: 320px;
+
+  padding: 45px;
+
+  background: #090909;
+}
+
+.difference-item strong {
+  color: #666666;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+}
+
+.difference-item h3 {
+  margin: 75px 0 20px;
+
+  color: #ffffff;
+
+  font-size: 30px;
+
+  font-weight: 400;
+}
+
+.difference-item p {
+  max-width: 320px;
+
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats-section {
+  background: #111111;
+
+  padding: 100px 7%;
+}
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  text-align: center;
+}
+
+.stats-grid div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.stats-grid strong {
+  color: #ffffff;
+
+  font-size: clamp(55px, 7vw, 100px);
+
+  font-weight: 300;
+
+  letter-spacing: -5px;
+}
+
+.stats-grid span {
+  color: #777777;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   BRANDS
+========================================================= */
+
+.brands-section {
+  background: #f0efeb;
+  color: #111111;
+
+  padding: 160px 7%;
+}
+
+.brands-header h2 {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: clamp(65px, 8vw, 130px);
+
+  line-height: 0.85;
+
+  letter-spacing: -5px;
+
+  font-weight: 400;
+}
+
+.brands-header h2 span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px #111111;
+}
+
+.brand-list {
+  width: 100%;
+
+  margin-top: 120px;
+}
+
+.brand-list a {
+  width: 100%;
+
+  min-height: 105px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #111111;
+
+  text-decoration: none;
+
+  border-top: 1px solid #c7c6c1;
+
+  font-size: clamp(30px, 4vw, 58px);
+
+  letter-spacing: -2px;
+
+  transition: padding 0.35s ease;
+}
+
+.brand-list a:last-child {
+  border-bottom: 1px solid #c7c6c1;
+}
+
+.brand-list a:hover {
+  padding-left: 25px;
+}
+
+.brand-list a span {
+  color: #111111;
+
+  font-size: 24px;
+}
+
+
+/* =========================================================
+   PREBOOK
+========================================================= */
+
+.prebook-section {
+  min-height: 700px;
+
+  padding: 120px 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.60)
+    ),
+    url("./assets/hero-car.jpg") center / cover;
+
+  color: #ffffff;
+}
+
+.prebook-content {
+  max-width: 900px;
+}
+
+.prebook-content h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(65px, 8vw, 130px);
+
+  line-height: 0.85;
+
+  letter-spacing: -5px;
+
+  font-weight: 400;
+}
+
+.prebook-content h2 span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+.prebook-content > p:not(.section-kicker) {
+  max-width: 560px;
+
+  margin: 55px 0 35px;
+
+  color: #aaaaaa;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+.prebook-button {
+  display: inline-block;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border: 1px solid #777777;
+
+  padding: 20px 28px;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  transition: all 0.3s ease;
+}
+
+.prebook-button:hover {
+  background: #ffffff;
+
+  color: #000000;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+  background: #f0efeb;
+  color: #111111;
+
+  padding: 160px 7%;
+}
+
+.about-inner {
+  max-width: 1150px;
+}
+
+.about-inner h2 {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: clamp(65px, 8vw, 130px);
+
+  line-height: 0.85;
+
+  letter-spacing: -5px;
+
+  font-weight: 400;
+}
+
+.about-inner h2 span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px #111111;
+}
+
+.about-inner > p:last-child {
+  max-width: 650px;
+
+  margin-top: 65px;
+
+  color: #666666;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  background: #050505;
+
+  padding: 80px 7% 35px;
+
+  color: #ffffff;
+}
+
+.footer-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-bottom: 65px;
+
+  border-bottom: 1px solid #292929;
+}
+
+.footer-logo {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  letter-spacing: 6px;
+}
+
+.footer-logo span {
+  font-weight: 300;
+}
+
+.footer-top p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+.footer-links {
+  display: flex;
+
+  gap: 40px;
+
+  padding: 35px 0;
+}
+
+.footer-links a {
+  color: #aaaaaa;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  padding-top: 25px;
+
+  border-top: 1px solid #292929;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #555555;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-content {
+    left: 7%;
+    width: 55%;
+  }
+
+  .featured-car {
+    grid-template-columns: 1fr;
+  }
+
+  .difference-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .hero-section {
+    min-height: 700px;
+  }
+
+  .navbar {
+    height: 85px;
+
+    padding: 0 6%;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-login {
+    display: none;
+  }
+
+  .nav-book {
+    padding: 13px 15px;
+
+    font-size: 9px;
+  }
+
+  .hero-background {
+    object-position: 65% center;
+  }
+
+  .hero-content {
+    left: 6%;
+
+    width: 88%;
+
+    top: 48%;
+
+    transform: translateY(-45%);
+  }
+
+  .hero-content h1 {
+    font-size: 19vw;
+
+    letter-spacing: -5px;
+  }
+
+  .hero-eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+
+    margin-top: 35px;
+  }
+
+  .hero-bottom {
+    left: 6%;
+    right: 6%;
+
+    bottom: 20px;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  .statement-section,
+  .categories-section,
+  .featured-section,
+  .difference-section,
+  .brands-section,
+  .about-section {
+    padding: 100px 6%;
+  }
+
+  .statement-section h2,
+  .categories-header h2,
+  .featured-header h2,
+  .difference-header h2,
+  .brands-header h2,
+  .prebook-content h2,
+  .about-inner h2 {
+    font-size: 14vw;
+
+    letter-spacing: -4px;
+  }
+
+  .category-row {
+    grid-template-columns: 35px 1fr 30px;
+
+    min-height: 145px;
+  }
+
+  .category-content h3 {
+    font-size: 28px;
+  }
+
+  .category-content p {
+    font-size: 10px;
+
+    line-height: 1.5;
+  }
+
+  .featured-image,
+  .featured-image img {
+    min-height: 420px;
+  }
+
+  .featured-info {
+    padding: 45px 28px;
+  }
+
+  .featured-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .brand-list a {
+    min-height: 80px;
+
+    font-size: 25px;
+  }
+
+  .footer-top {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+
+    gap: 25px;
+  }
+
+}
+
+/* =========================================================
+   FORCE CARS PAGE TEXT VISIBILITY
+========================================================= */
+
+.cars-page {
+  background: #090909 !important;
+  color: #ffffff !important;
+}
+
+/* MAIN COLLECTION HEADING */
+.cars-page .cars-hero h1,
+.cars-page .cars-hero h1 span {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.cars-page .cars-hero h1 span {
+  color: transparent !important;
+  -webkit-text-stroke: 2px #ffffff !important;
+}
+
+/* HERO TEXT */
+.cars-page .cars-eyebrow,
+.cars-page .cars-intro,
+.cars-page .cars-hero-meta {
+  color: #bdbdbd !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* COLLECTION SECTION */
+.cars-page .collection-section {
+  background: #f0efeb !important;
+  color: #111111 !important;
+}
+
+.cars-page .collection-header h2 {
+  color: #111111 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.cars-page .collection-header h2 span {
+  color: transparent !important;
+  -webkit-text-stroke: 2px #111111 !important;
+}
+
+.cars-page .collection-description {
+  color: #555555 !important;
+  opacity: 1 !important;
+}
+
+/* CAR CARD TEXT */
+.cars-page .car-info,
+.cars-page .car-info h3,
+.cars-page .car-brand,
+.cars-page .car-category,
+.cars-page .car-specs span,
+.cars-page .car-bottom strong,
+.cars-page .price-label,
+.cars-page .car-view {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.cars-page .car-info h3 {
+  color: #111111 !important;
+}
+
+.cars-page .car-brand,
+.cars-page .car-category {
+  color: #555555 !important;
+}
+
+.cars-page .car-specs span {
+  color: #222222 !important;
+}
+
+.cars-page .car-bottom strong {
+  color: #111111 !important;
+}
+
+.cars-page .price-label {
+  color: #666666 !important;
+}
+
+.cars-page .car-view {
+  color: #111111 !important;
+}
+
+/* =========================================================
+   MARQUE / BRAND SECTION
+========================================================= */
+
+.cars-page .brands-section {
+  background: #090909 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.cars-page .brands-inner {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.cars-page .brands-inner .section-kicker {
+  color: #888888 !important;
+  opacity: 1 !important;
+}
+
+.cars-page .brands-inner h2 {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.cars-page .brands-inner h2 span {
+  color: transparent !important;
+  -webkit-text-stroke: 2px #ffffff !important;
+}
+
+/* THE ACTUAL BMW / AUDI / ETC TEXT */
+.cars-page .brand-list {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.cars-page .brand-list span {
+  display: flex !important;
+
+  width: 100% !important;
+  min-height: 115px !important;
+
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  color: #ffffff !important;
+
+  background: transparent !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  font-size: clamp(35px, 5vw, 72px) !important;
+  font-weight: 400 !important;
+
+  letter-spacing: -2px !important;
+
+  border-top: 1px solid #3a3a3a !important;
+}
+
+.cars-page .brand-list span:last-child {
+  border-bottom: 1px solid #3a3a3a !important;
+}
+
+/* ARROWS */
+.cars-page .brand-list span::after {
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   PRE-BOOK SECTION
+========================================================= */
+
+.cars-page .prebook-section {
+  color: #ffffff !important;
+}
+
+.cars-page .prebook-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.cars-page .prebook-content h2 {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.cars-page .prebook-content h2 span {
+  color: transparent !important;
+  -webkit-text-stroke: 2px #ffffff !important;
+}
+
+.cars-page .prebook-content p {
+  color: #aaaaaa !important;
+}
+
+.cars-page .prebook-button {
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   FINAL FIX — CARS PAGE VISIBILITY
+   Put Cars content above animation / overlay layers
+========================================================= */
+
+.cars-page {
+  position: relative !important;
+  z-index: 1 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+
+.cars-page .brands-section {
+  position: relative !important;
+  z-index: 50 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  isolation: isolate !important;
+}
+
+.cars-page .brands-inner {
+  position: relative !important;
+  z-index: 100 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+
+.cars-page .brands-inner h2,
+.cars-page .brands-inner .section-kicker,
+.cars-page .brand-list,
+.cars-page .brand-list span {
+  position: relative !important;
+  z-index: 200 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+.cars-page .brands-inner h2 {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+.cars-page .brands-inner h2 span {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: 2px #ffffff !important;
+}
+
+.cars-page .brand-list span {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: none !important;
+  background: transparent !important;
+}
+
+.cars-page .brand-list span:hover {
+  color: #cccccc !important;
+  -webkit-text-fill-color: #cccccc !important;
+}
+
+/* Remove any dark pseudo-elements sitting over the text */
+.cars-page .brands-section::before,
+.cars-page .brands-section::after,
+.cars-page .brands-inner::before,
+.cars-page .brands-inner::after,
+.cars-page .brand-list::before,
+.cars-page .brand-list::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Make the actual rows unmistakable */
+.cars-page .brand-list span {
+  border-top: 1px solid #444444 !important;
+  border-bottom: none !important;
+}
+
+.cars-page .brand-list span:last-child {
+  border-bottom: 1px solid #444444 !important;
+}
+
+/* =========================================================
+   FINAL FIX — MARQUES / CHOOSE YOUR MARQUE
+   ========================================================= */
+
+.brands-section {
+  background: #f3f0e9 !important;
+  color: #111111 !important;
+  position: relative;
+  z-index: 5;
+}
+
+.brands-section .brands-header {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  color: #111111 !important;
+}
+
+.brands-section .brands-header .section-kicker {
+  color: #555555 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.brands-section .brands-header h2 {
+  color: #111111 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.brands-section .brands-header h2 span {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: 1.5px #111111 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.brands-section .brand-list {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.brands-section .brand-list a {
+  color: #111111 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.brands-section .brand-list a span {
+  color: #111111 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.brands-section .brand-list a::before {
+  background: #111111 !important;
+}
+
+.brands-section .brand-list a::after {
+  background: #111111 !important;
+}
+
+.brands-section * {
+  visibility: visible;
+}
+
+/* =========================================================
+   PREMIUM HERO CAR — CLEARER / BRIGHTER
+   ========================================================= */
+
+.hero-section {
+  background: #050505;
+}
+
+/* Make the actual car image brighter and sharper */
+.hero-background {
+  filter: brightness(1.22) contrast(1.08) saturate(1.08);
+  object-position: 68% center;
+}
+
+/* Softer cinematic overlay
+   Dark on left for text, much clearer on the car */
+.hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.55) 32%,
+      rgba(0, 0, 0, 0.18) 62%,
+      rgba(0, 0, 0, 0.05) 100%
+    ) !important;
+
+  opacity: 1 !important;
+}
+
+/* Subtle premium vignette */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  background:
+    radial-gradient(
+      ellipse at 70% 50%,
+      transparent 35%,
+      rgba(0, 0, 0, 0.18) 100%
+    );
+}
+
+/* Keep navbar/content above everything */
+.navbar,
+.hero-content,
+.hero-bottom {
+  z-index: 5;
+}
