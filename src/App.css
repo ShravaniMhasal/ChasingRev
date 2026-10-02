@@ -950,7 +950,7 @@ p {
       rgba(0, 0, 0, 0.95),
       rgba(0, 0, 0, 0.60)
     ),
-    url("./assets/hero-car.jpg") center / cover;
+    url("./assets/hero-car.png") center / cover;
 
   color: #ffffff;
 }

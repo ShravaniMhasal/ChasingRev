@@ -209,9 +209,35 @@ function Booking() {
      FORM SUBMIT
   ========================================= */
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+  event.preventDefault();
 
-    event.preventDefault();
+  try {
+    const response = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: `
+Car: ${formData.car}
+Service: ${formData.service}
+Package: ${formData.package}
+Phone: ${formData.phone}
+Date: ${formData.date}
+Time: ${formData.time}
+Notes: ${formData.notes}
+        `,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Something went wrong");
+    }
 
     setSubmitted(true);
 
@@ -220,8 +246,12 @@ function Booking() {
       behavior: "smooth",
     });
 
-  };
+  } catch (error) {
+    console.error("Booking submission error:", error);
 
+    alert("Something went wrong while submitting your booking. Please try again.");
+  }
+};
 
   /* =========================================
      SUCCESS
